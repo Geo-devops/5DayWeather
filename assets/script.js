@@ -26,11 +26,12 @@ $(document).ready(function(){
                 var card = $("<div>").addClass("card mt-3");
                 var cardBody = $("<div>").addClass("card-body");
                 var cardTitle = $("<h4>").addClass("card-title").text(response.name);
-                var temp = $("<h7>").addClass("card-text").text(response.main.temp);
-                var humidity = $("<h8>").addClass("card-text").text(response.main.temp);
+                var temp = $("<Temperature>").addClass("card-text").text(response.main.temp);
+                var humidity = $("<Humdity>").addClass("card-text").text(response.main.humidity);
                 
-                $("#city-view").append(card.append(cardBody.append(cardTitle, temp)))
-                // con
+                $("#city-view").append(card.append(cardBody.append(cardTitle, temp)));
+                $("#city-view").append(card.append(cardBody.append(cardTitle, humidity)));
+            
                 getForecast(response.coord.lat, response.coord.lon)
 
                 
@@ -60,7 +61,8 @@ $(document).ready(function(){
                     let sunrise = date.slice(16, 24);
 
                     `<h1>${sunrise}</h1>`
-                    
+                    $("#city-view").append(days.append(dayName.append(cardTitle, date)));
+
                 //     var card2 = $("<div>").addClass("card mt-3");
                 // var cardBody2 = $("<div>").addClass("card-body");
                 // var cardTitle2= $("<h4>").addClass("card-title").text(response.name);

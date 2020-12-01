@@ -11,66 +11,26 @@
     <div class="container">
         <h1>Weather by City Search</h1>
 
-    <form action="city-form">
         <label for="city-input">Weather Search by City Name</label>
-        <input  type="text" id="City-input">
+        <input  type="text" id="city-input">
+        <button class="btn btn-primary" id="search-weather">Search</button>
 <br>        
 
 <!---Trigger AJAX -->
-        <input id="search-weather" type="submit" value="submit">
-    </form>
+     
     
     <div id="city-view"></div>
-
+<!-- 
     <div class="city"></div>
     <div class="wind"></div>
     <div class="humidity"></div>
     <div class="temp"></div>
-    <div class="tempF"></div>
+    <div class="tempF"></div> -->
 
 
+</div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-   
-    <script src="script.js"></script>
-    <script type="text/javascript">
- 
- $("#search-weather").on("click", function(event){
-
-
-// Prevent submit button from submitting a form when clicked without anything there
-event.preventDefault();
- 
-
-// process input from search box
-var city = $("#city-input").val();
-
-// var APIKey = "39b02ba1a1fac3463d263b47d5d01e84";
-// var queryUrl = "http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=" + "q={city name}" + APIKey;
-
-var queryURL = "https://api.openweathermap.org/data/2.5/weather?id=6167865&appid=39b02ba1a1fac3463d263b47d5d01e84"
-
-
-$.ajax({
-    url: queryURL,
-    method: "GET"
-    })
-    
-    .then(function(response) {
-
-        // queryURL
-        console.log(queryUrl);
-        console.log(response);
-
-        // // content to html
-        // $(".city").text(JSON.stringify(response));
-        
-        // con
-
-    });
-});
-        </script>
-    </script>
-</script>
-    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
+    <script src="assets/script.js"></script>
 </body>
 </html>
